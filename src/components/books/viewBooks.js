@@ -8,11 +8,15 @@ const ViewBooks = () => {
   const getBooks = async () => {
     try {
       const response = await axios.get(`${baseURL}/books`);
-      if (response.status === 200) {
+      if (response.status === 200 && Array.isArray(response.data)) {
         setBooks(response.data);
+      } else {
+        console.log("Unexpected response:", response.data);
+        setBooks([]); // fallback
       }
     } catch (err) {
       console.log(err);
+      setBooks([]);
     }
   };
   useEffect(() => {
