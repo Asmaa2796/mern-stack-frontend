@@ -13,7 +13,7 @@ const ViewBooks = () => {
         setBooks(response.data);
       } else {
         console.log("Unexpected response:", response.data);
-        setBooks([]); // fallback
+        setBooks([]);
       }
     } catch (err) {
       console.log(err);
