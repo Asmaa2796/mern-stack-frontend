@@ -8,6 +8,8 @@ const ViewBooks = () => {
   const getBooks = async () => {
     try {
       const response = await axios.get(`${baseURL}/books`);
+      console.log("API Base URL:", baseURL);
+
       if (response.status === 200 && Array.isArray(response.data)) {
         setBooks(response.data);
       } else {
