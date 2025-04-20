@@ -28,8 +28,8 @@ const ViewBooks = () => {
       <div className="container">
         <h3>All Books</h3>
         <div className="row">
-          {books.length > 0 ? (
-            Array.isArray(books) && books.map((book) => (
+          {Array.isArray(books) && books.length > 0 ? (
+            books.map((book) => (
               <div className="col-lg-6" key={book._id}>
                 <div className="card shadow-sm border p-4 my-3">
                   <div className="row">
