@@ -2,12 +2,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import config from "../../api/baseUrl";
-const { baseURL, photoBaseURL } = config;
+const { photoBaseURL } = config;
 const ViewBooks = () => {
   const [books, setBooks] = useState([]);
   const getBooks = async () => {
     try {
-      const response = await axios.get(`${baseURL}/books`);
+      const response = await axios.get(`mern-stack-backend-production-f27c.up.railway.app/books`);
 
       if (response.status === 200 && Array.isArray(response.data)) {
         setBooks(response.data);
