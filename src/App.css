@@ -1,0 +1,233 @@
+:root {
+  --main-color: #3D5A80;
+  --sub-color: #EE6C4D;
+  --sec-color: #98c1d9c8;
+  --sec1-color: #053F5C;
+  --bg-color: #293241;
+  --shadow: 0px 3px 5px 0px rgb(0 0 0 / 9%);
+}
+@font-face {
+  font-family: Outfit;
+  src: url(../public/OutfitRegular.ttf);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif !important;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #fdfdfd;
+}
+
+/* custom */
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.text-color {
+  color: var(--main-color);
+}
+
+.sub-color {
+  color: var(--sub-color);
+}
+
+.sec-color {
+  color: var(--sec-color);
+}
+.sec1-color {
+  color: var(--sec1-color);
+}
+
+.text-gray {
+  color: #777;
+}
+
+.text-lg {
+  font-size: large;
+}
+
+.text-md {
+  font-size: medium;
+}
+
+.text-sm {
+  font-size: small;
+}
+
+.text-xs {
+  font-size: x-small;
+}
+
+.bx-sh {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, .091), 0 15px 12px rgba(0, 0, 0, .046);
+}
+
+.line-height {
+  line-height: 1.7em;
+}
+
+.sm-title {
+  letter-spacing: .7em;
+  color: #777;
+}
+
+.title h3 {
+  font-weight: bold;
+}
+
+.b25 {
+  border-radius: 25px !important;
+}
+.shadow-sm {box-shadow: 0 .325rem .58rem rgba(0, 0, 0, 0.171) !important;}
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url(../public/arrow.png) !important;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: right 14px center;
+  color: #777 !important;
+}
+/* form style */
+.form-style h4 {font-weight: bold;}
+.form-style {
+  margin: 40px auto 20px;
+}
+.form-style form {
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 28px;
+  margin-bottom: 15px;
+}
+.form-style label {
+  display: block;
+  margin: 10px 0;
+}
+.form-style input,.form-style select {
+  padding: 0px 10px;
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+  height: 40px;
+  margin: 5px 0;
+}
+.form-style textarea {
+  padding: 0px 10px;
+  background-color: #fdfdfd;
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+.form-style input::placeholder,.form-style textarea::placeholder {color: #ddd;font-size: 14px;}
+.form-style input:focus,
+.form-style textarea:focus,
+.form-style select:focus
+ {outline: none;border: 1px solid #FFC446;}
+.form-style button {
+  background: var(--sub-color);
+  color: #fff;
+  display: block;
+  width: 30%;
+  margin: 20px auto;
+  border: none;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0,.2);
+  cursor: pointer;
+  padding: 10px 0px;
+  border-radius: 25px;
+}
+.desc {
+  overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3; 
+   -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+.desc-sm {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+          line-clamp: 1; 
+  -webkit-box-orient: vertical;
+ font-size: 15px;
+}
+.file {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.file>input[type='file'] {
+  display: none
+}
+
+.file>label {
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  outline: 0;
+  user-select: none;
+  border-color: var(--main-color);
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  background-color: #e0f2f1;
+  color: hsl(0, 0%, 29%);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+.file--upload>label {
+  color: var(--main-color) !important;
+  border-color: var(--hover-color);
+}
+/* navbar */
+.navbar {
+  background-color: var(--sec1-color);
+}
+.navbar .navbar-brand img {width: auto;max-height: 50px;}
+.navbar .nav-item {margin-left: 10px;}
+.navbar .nav-link {color: #fff;transition: all .3s ease-in-out;}
+.navbar .nav-link:hover {color: var(--sec-color);}
+.navbar img {
+  width: auto;
+  max-height: 28px;
+}
+.navbar .navbar-toggler:focus {outline: none;} 
+.not-found img {width: 450px;max-width: 85%;}
+/* book */
+.book_view .category {
+  background-color: var(--sec-color);
+  color: var(--sec1-color);
+  padding: 2px 20px;
+  display: inline-block;
+  margin-block: 0px 10px;
+  border-radius: 25px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+}
