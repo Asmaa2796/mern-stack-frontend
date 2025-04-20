@@ -7,7 +7,7 @@ const ViewBooks = () => {
   const [books, setBooks] = useState([]);
   const getBooks = async () => {
     try {
-      const response = await axios.get(`${baseURL}`);
+      const response = await axios.get(`${baseURL}/books`);
 
       if (response.status === 200 && Array.isArray(response.data)) {
         setBooks(response.data);
