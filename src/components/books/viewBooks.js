@@ -5,6 +5,7 @@ import config from "../../api/baseUrl";
 const { baseURL, photoBaseURL } = config;
 const ViewBooks = () => {
   const [books, setBooks] = useState([]);
+  console.log(baseURL);
   const getBooks = async () => {
     try {
       const response = await axios.get(`${baseURL}/books`);
