@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="container">
         <Link to="/">
           <span className="navbar-brand">
-            <img src="../img/logo.png" alt="" />
+          <img src={"../img/logo.png"} alt="" />
           </span>
         </Link>
         <button
@@ -18,9 +18,7 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">
-            <img src={"../img/logo.png"} alt="" />
-          </span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto p-0">
