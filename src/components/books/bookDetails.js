@@ -9,9 +9,11 @@ const BookDetails = () => {
   const { id } = useParams();
   const [book, setBook] = useState();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     document.title = "Book Details";
     const getBookDetails = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(`${baseURL}/books/${id}`);
         if (response.status === 200) {
@@ -20,6 +22,8 @@ const BookDetails = () => {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -41,8 +45,14 @@ const BookDetails = () => {
     <div className="book_view py-5">
       <div className="container">
         <Banner currentPage="Book details" sub="Books" to="/books" />
-
-        {book ? (
+        {loading ? (
+          <div className="skeleton-wrapper">
+            <div className="skeleton-image mb-3"></div>
+            <div className="skeleton-text mb-2"></div>
+            <div className="skeleton-text mb-2"></div>
+            <div className="skeleton-text short mb-2"></div>
+          </div>
+        ) : book ? (
           <div className="card shadow-sm border p-4 my-3">
             <div className="row">
               <div className="book_info col-lg-8">
@@ -58,19 +68,20 @@ const BookDetails = () => {
                 <p className="line-height desc text-secondary">
                   {book.longDesc}
                 </p>
-                
+
                 <div class="d-flex justify-content-between">
-                <Link to={`/books/edit/${book._id}`}>
-                  <span className="text-success">
-                    Edit book <i className="fa fa-pencil"></i>
+                  <Link to={`/books/edit/${book._id}`}>
+                    <span className="text-success">
+                      Edit book <i className="fa fa-pencil"></i>
+                    </span>
+                  </Link>
+                  <span
+                    onClick={onDelete}
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  >
+                    Delete <i className="fa fa-trash"></i>
                   </span>
-                </Link>
-                <span
-                  onClick={onDelete}
-                  className="text-danger" style={{cursor:'pointer'}}
-                >
-                  Delete <i className="fa fa-trash"></i>
-                </span>
                 </div>
               </div>
               <div className="book_cover text-center col-lg-4">
